@@ -17,22 +17,20 @@ namespace FlagWinApp
         public FrmMain()
         {
             InitializeComponent();
-
-            isHello = true; // 아침임. 초기화
         }
 
         private void BtnGreeting_Click(object sender, EventArgs e)
         {
-            if (isHello == true)
+            isHello ^= true;
+
+            if (isHello)
             {
                 LblGreeting.Text = "Good Morning";
-                isHello = false;
                 BtnGreeting.Text = "저녁인사";
             }
-            else if (isHello == false)
+            else
             {
                 LblGreeting.Text = "Good Bye~~~~!";
-                isHello = true;
                 BtnGreeting.Text = "아침인사";
             }
         }
