@@ -42,7 +42,7 @@ namespace BlinkerApp
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dispatcherTimer = new DispatcherTimer();
-
+            //
             // ns : 10^(-9) sec
             // TimeSpan 단위 [100ns = 10^(-7) sec]
             dispatcherTimer.Interval = new TimeSpan(10000000); // 1초
