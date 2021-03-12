@@ -53,8 +53,46 @@ namespace SnakeBiteGame
         private void InitSnake()
         {
             // throw new NotImplementedException();
-            // int x = rand.Next(1, Canvas)
+            int x = rand.Next(1, 500 / size) * size;
+            int y = rand.Next(1, 400 / size) * size;
+
+            for(int i = 0; i < 30; i++)
+            {
+                snake[i] = new Ellipse();
+                snake[i].Width = snake[i].Height = size;
+                
+                if (i == 0)
+                    snake[i].Fill = Brushes.Chocolate;
+                else if (i % 5 == 0)
+                    snake[i].Fill = Brushes.YellowGreen;
+                else
+                    snake[i].Fill = Brushes.Gold;
+
+                snake[i].Stroke = Brushes.Black;
+
+                CvsGame.Children.Add(snake[i]);
+            }
+
+            // 뱀 길이
+            for (int i = visibleCount; i < 30; i++)
+            {
+                snake[i].Visibility = Visibility.Hidden;
+            }
+            CreateSnake(x, y);
         }
+
+        private void CreateSnake(int x, int y)
+        {
+            // throw new NotImplementedException();
+            for (int i = 0; i < visibleCount; i++)
+            {
+                // Tag에 x, y 값이 들어있음 (사용자 지정 정보)
+                snake[i].Tag = new Point(x, y + i * size);
+                Canvas.SetLeft(snake[i], x);
+                Canvas.SetTop(snake[i], y + i * size);
+            }
+        }
+
         private void InitEgg()
         {
             // throw new NotImplementedException();
@@ -64,11 +102,46 @@ namespace SnakeBiteGame
         private void playTimer_Tick(object sender, EventArgs e)
         {
             // throw new NotImplementedException();
+            if(move != "")
+            {
+                startFlag = true;
+
+                for(int i = visibleCount; i >= 1; i++)
+                {
+                    Point p = (Point) snake[i - 1].Tag;
+                    snake[i].Tag = new Point(p.X, p.Y);
+                }
+
+                // 키보드 옮겼을 때 처리
+
+                // 알을 먹었는 지 체크
+            }
+
+            if (startFlag)
+            {
+                TimeSpan span = stopwatch.Elapsed;
+                Txttime.Text = $"Time = {span.Minutes}:{span.Seconds}:{span.Milliseconds / 10}";
+                DrawSnake();
+            }
+        }
+
+        private void DrawSnake()
+        {
+            // throw new NotImplementedException();
+            for(int i = 0; i < visibleCount; i++)
+            {
+                Point p = (Point)snake[i].Tag;
+                Canvas.SetLeft(snake[i], p.X);
+                Canvas.SetTop(snake[i], p.Y);
+            }
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
+            if (move == "")
+                stopwatch.Start();
 
+            // 키조작
         }
 
     }
