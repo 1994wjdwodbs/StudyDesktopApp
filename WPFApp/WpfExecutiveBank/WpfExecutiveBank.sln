@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCalculatorApp", "WpfCalculatorApp\WpfCalculatorApp.csproj", "{5EAAFAC3-9E24-411B-893E-3549E39D4A93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalogClockApp", "AnalogClockApp\AnalogClockApp.csproj", "{B9E106F8-9CDA-400C-869E-E5543C62C170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteCarloPiApp", "MonteCarloPiApp\MonteCarloPiApp.csproj", "{A83E8654-E036-46D5-BE31-3F2AF0F5974A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeBiteGame", "SnakeBiteGame\SnakeBiteGame.csproj", "{B8DEEFB2-5CAB-43BD-BA0C-C8DB856FAC4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{5EAAFAC3-9E24-411B-893E-3549E39D4A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EAAFAC3-9E24-411B-893E-3549E39D4A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EAAFAC3-9E24-411B-893E-3549E39D4A93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E106F8-9CDA-400C-869E-E5543C62C170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E106F8-9CDA-400C-869E-E5543C62C170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E106F8-9CDA-400C-869E-E5543C62C170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E106F8-9CDA-400C-869E-E5543C62C170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83E8654-E036-46D5-BE31-3F2AF0F5974A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83E8654-E036-46D5-BE31-3F2AF0F5974A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83E8654-E036-46D5-BE31-3F2AF0F5974A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83E8654-E036-46D5-BE31-3F2AF0F5974A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8DEEFB2-5CAB-43BD-BA0C-C8DB856FAC4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8DEEFB2-5CAB-43BD-BA0C-C8DB856FAC4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8DEEFB2-5CAB-43BD-BA0C-C8DB856FAC4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8DEEFB2-5CAB-43BD-BA0C-C8DB856FAC4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
