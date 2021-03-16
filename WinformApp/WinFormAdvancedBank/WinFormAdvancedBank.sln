@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressInfoApp", "AddressIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTSensorMonApp", "IoTSensorMonApp\IoTSensorMonApp.csproj", "{1D66AE4E-A802-4AA5-A038-F164B02E202B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookRentalShopApp", "BookRentalShopApp\BookRentalShopApp.csproj", "{460B7374-B959-4BFF-96D5-6FB1FC5CE075}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1D66AE4E-A802-4AA5-A038-F164B02E202B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D66AE4E-A802-4AA5-A038-F164B02E202B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D66AE4E-A802-4AA5-A038-F164B02E202B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{460B7374-B959-4BFF-96D5-6FB1FC5CE075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460B7374-B959-4BFF-96D5-6FB1FC5CE075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{460B7374-B959-4BFF-96D5-6FB1FC5CE075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{460B7374-B959-4BFF-96D5-6FB1FC5CE075}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
