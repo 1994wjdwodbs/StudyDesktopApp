@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 
 namespace BookRentalShopApp.Helper
 {
@@ -12,5 +13,21 @@ namespace BookRentalShopApp.Helper
 
         public static string LoginUserId = string.Empty;
 
+        // 아이피 주소 받아오는 메서드
+        internal static string GetLocalIp()
+        {
+            string localIP = string.Empty;
+            IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach(IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    localIP = ip.ToString();
+                    break;
+                }
+            }
+
+            return localIP;
+        }
     }
 }

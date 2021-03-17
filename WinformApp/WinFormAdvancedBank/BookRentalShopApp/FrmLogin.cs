@@ -23,12 +23,14 @@ namespace BookRentalShopApp
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             // 폼 활성화, 포커스 제공
-            this.Activate();
-            TxtUserId.Focus();
+            // this.Activate();
+            // TxtUserId.Focus();
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            var strUserId = string.Empty; // 
+
             if (string.IsNullOrEmpty(TxtUserId.Text) || string.IsNullOrEmpty(TxtPassword.Text))
             {
                 MetroMessageBox.Show(this, "아이디/패스워드를 입력하세요!", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -37,7 +39,7 @@ namespace BookRentalShopApp
                 return;
             }
             else
-                MessageBox.Show("로그인 처리");
+            { }
 
             try
             {
@@ -46,11 +48,23 @@ namespace BookRentalShopApp
                     if (conn.State == ConnectionState.Closed)
                         conn.Open();
 
+                    var query = " SELECT userID FROM memberTBL " +
+                                " WHERE userID = @userId " +
+                                " AND passwords = @passwords " +
+                                " AND levels = 'S'; ";
+
                     // SqlCommand 생성
-                    SqlCommand cmd = new SqlCommand();
+                    SqlCommand cmd = new SqlCommand(query, conn);
 
                     // SQLInjection 해킹 막기위해서 사용
-                    SqlParameter Param;
+                    SqlParameter pUserID = new SqlParameter("@userId", SqlDbType.VarChar, 20);
+                    pUserID.Value = TxtUserId.Text;
+                    SqlParameter pPasswords = new SqlParameter("@passwords", SqlDbType.VarChar, 20);
+                    pPasswords.Value = TxtPassword.Text;
+
+                    cmd.Parameters.Add(pUserID);
+                    cmd.Parameters.Add(pPasswords);
+                    cmd.Prepare();
 
                     // ~~~ (SQL 처리)
                     // ~~~ ...
@@ -59,6 +73,27 @@ namespace BookRentalShopApp
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     // reader로 처리...
+                    reader.Read();
+                    strUserId = reader["userID"] != null ? reader["userID"].ToString() : string.Empty;
+                    reader.Close();
+
+                    // MessageBox.Show(strUserId);
+                    if (string.IsNullOrEmpty(strUserId))
+                    {
+                        MetroMessageBox.Show(this, "접속실패", "로그인실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        var updateQuery = $@"UPDATE membertbl 
+                                             SET lastLoginDt = GETDATE(), loginIpAddr = '{Helper.Common.GetLocalIp()}'
+                                             WHERE userId = '{strUserId}' "; // 로그인 정보 남기기
+                        cmd.CommandText = updateQuery;
+                        cmd.ExecuteNonQuery();
+
+                        MetroMessageBox.Show(this, "접속성공", "로그인성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+
                 }
             }
             catch (Exception ex)
