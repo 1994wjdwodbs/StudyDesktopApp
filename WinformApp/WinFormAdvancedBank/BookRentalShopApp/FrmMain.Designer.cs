@@ -82,6 +82,7 @@ namespace BookRentalShopApp
             this.MnuBooks.Name = "MnuBooks";
             this.MnuBooks.Size = new System.Drawing.Size(180, 22);
             this.MnuBooks.Text = "도서(&B)";
+            this.MnuBooks.Click += new System.EventHandler(this.MnuBooks_Click);
             // 
             // toolStripSeparator1
             // 
@@ -93,6 +94,7 @@ namespace BookRentalShopApp
             this.MnuRental.Name = "MnuRental";
             this.MnuRental.Size = new System.Drawing.Size(180, 22);
             this.MnuRental.Text = "대여(&R)";
+            this.MnuRental.Click += new System.EventHandler(this.MnuRental_Click);
             // 
             // MnuExit
             // 

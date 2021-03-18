@@ -82,7 +82,7 @@ namespace BookRentalShopApp
             this.BtnLogin.Location = new System.Drawing.Point(35, 150);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(104, 35);
-            this.BtnLogin.TabIndex = 2;
+            this.BtnLogin.TabIndex = 3;
             this.BtnLogin.Text = "로그인";
             this.BtnLogin.UseSelectable = true;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
@@ -92,7 +92,7 @@ namespace BookRentalShopApp
             this.BtnCancel.Location = new System.Drawing.Point(145, 150);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(104, 35);
-            this.BtnCancel.TabIndex = 3;
+            this.BtnCancel.TabIndex = 4;
             this.BtnCancel.Text = "취소";
             this.BtnCancel.UseSelectable = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -122,7 +122,7 @@ namespace BookRentalShopApp
             this.TxtPassword.SelectionStart = 0;
             this.TxtPassword.ShortcutsEnabled = true;
             this.TxtPassword.Size = new System.Drawing.Size(135, 23);
-            this.TxtPassword.TabIndex = 5;
+            this.TxtPassword.TabIndex = 2;
             this.TxtPassword.UseSelectable = true;
             this.TxtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TxtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -134,7 +134,7 @@ namespace BookRentalShopApp
             this.metroLabel2.Location = new System.Drawing.Point(52, 103);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel2.TabIndex = 4;
+            this.metroLabel2.TabIndex = 0;
             this.metroLabel2.Text = "패스워드";
             // 
             // FrmLogin

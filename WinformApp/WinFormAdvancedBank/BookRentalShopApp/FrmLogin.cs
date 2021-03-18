@@ -23,8 +23,8 @@ namespace BookRentalShopApp
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             // 폼 활성화, 포커스 제공
-            // this.Activate();
-            // TxtUserId.Focus();
+            this.Activate();
+            TxtUserId.Focus();
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
