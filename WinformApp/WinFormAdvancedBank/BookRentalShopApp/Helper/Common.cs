@@ -29,5 +29,13 @@ namespace BookRentalShopApp.Helper
 
             return localIP;
         }
+        // SQL Injection 기초적인 처리 (Secure Coding)
+        internal static string ReplaceCmdText(string strSource)
+        {
+            var result = strSource.Replace("'", "＇"); // 'ㄱ' + 한자3번(관련없는 따옴표)
+
+            return (((strSource.Replace("'", "＇")).Replace("--", "")).Replace(";", ""));
+        }
     }
+
 }

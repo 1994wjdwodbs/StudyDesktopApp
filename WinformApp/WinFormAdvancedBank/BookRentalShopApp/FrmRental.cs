@@ -83,7 +83,7 @@ namespace BookRentalShopApp
             if (!(selData.Cells[6].Value is DBNull))
                 DtpReturnDate.Value = (DateTime)selData.Cells[6].Value;
             else
-                DtpReturnDate.Value = new DateTime(2000, 12, 31);
+                DtpReturnDate.Value = new DateTime(1900, 12, 31);
 
 
             CboRentalState.SelectedValue = selData.Cells[7].Value;
@@ -279,9 +279,13 @@ namespace BookRentalShopApp
                     else
                     {
                         query = @"UPDATE [dbo].[rentaltbl]
-                                   SET [returnDate] = GETDATE()
-                                      ,[rentalState] = @rentalState
-                                 WHERE Idx = @idx";
+                                   SET [returnDate] = 
+                                   CASE @rentalState
+	                                WHEN 'T' THEN GETDATE()
+	                                WHEN 'R' THEN NULL
+                                   END
+                                  , [rentalState] = @rentalState
+                                WHERE Idx = @Idx";
                     }
 
                     cmd.CommandText = query;
