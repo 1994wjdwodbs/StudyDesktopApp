@@ -25,7 +25,7 @@ namespace BookRentalShopApp.Helper
                     localIP = ip.ToString();
                     break;
                 }
-            }
+            } 
 
             return localIP;
         }
