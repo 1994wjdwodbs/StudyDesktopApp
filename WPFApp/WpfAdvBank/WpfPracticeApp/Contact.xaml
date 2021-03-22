@@ -1,0 +1,66 @@
+﻿<Page x:Class="WpfPracticeApp.Contact"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPracticeApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Contact" Initialized="Page_Initialized"
+      xmlns:bl="clr-namespace:WpfPracticeApp.BusinessLogic">
+      <!-- 비즈니스 로직 [xmlns:bl="~"]-->
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <Button x:Key="Button">Hello World</Button>
+            <SolidColorBrush x:Key="accentBrush" Color="Red"/>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <Grid Background="{StaticResource background}">
+        <!-- 행 수 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!-- 열 수 -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Grid(0,0) : default 값 -->
+        <Label Content="Sender :" Grid.Row="0" Grid.Column="0" 
+               FontSize="16"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Right"/>
+        <Label Content="Message :" Grid.Row="1" Grid.Column="0" 
+               FontSize="16"
+               VerticalAlignment="Top" 
+               HorizontalAlignment="Right"
+               Margin="0,15,0,0"/>
+        
+        <TextBox x:Name="TextSender" Grid.Row="0" Grid.Column="1" 
+                 Margin="10"/>
+        <TextBox x:Name="TxtMessage" Grid.Row="1" Grid.Column="1"
+                 Margin="10"/>
+        
+        <!-- 비즈니스 로직 부분 -->
+        <Label Grid.Row="2" Grid.Column="0">
+            <bl:Car Speed="10" MainColor="AliceBlue" />
+        </Label>
+        
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <ToggleButton Margin="5" Width="50" Content="Toggle" IsChecked="False"/>
+
+            <Button Content="{StaticResource Button}" Background="{StaticResource accentBrush}"/>
+            <Button x:Name="BtnSend" Content="Send"
+                    Margin="5" Width="100" FontSize="14"/>
+            <Button x:Name="BtnCancel" Content="Cancel"
+                    Margin="5" Width="100" FontSize="14"/>
+        </StackPanel>
+    </Grid>
+</Page>
