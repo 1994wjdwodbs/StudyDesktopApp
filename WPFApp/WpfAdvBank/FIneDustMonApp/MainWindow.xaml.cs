@@ -123,6 +123,11 @@ namespace FIneDustMonApp
                         DataTime = item["dataTime"].InnerText,
                         Khai = item["khaiValue"].InnerText,
                         SO2 = item["so2Value"].InnerText,
+                        CO = item["coValue"].InnerText,
+                        PM10 = item["pm10Value"].InnerText,
+                        PM25 = item["pm25Value"].InnerText,
+                        NO2 = item["no2Value"].InnerText,
+                        O3 = item["o3Value"].InnerText,
                     });
                 }
             }
@@ -136,5 +141,10 @@ namespace FIneDustMonApp
         public string DataTime { get; set; }
         public string Khai { get; set; }
         public string SO2 { get; set; }
+        public string CO { get; set; }
+        public string NO2 { get; set; }
+        public string O3 { get; set; }
+        public string PM10 { get; set; }
+        public string PM25 { get; set; }
     }
 }

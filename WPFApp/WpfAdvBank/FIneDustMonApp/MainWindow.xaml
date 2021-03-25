@@ -34,10 +34,90 @@
             x:Name="DgrFineDustInfos"
             Grid.Row="1" Grid.Column="0"
             Margin="5"
-            AutoGenerateColumns="True"
+            AutoGenerateColumns="False"
             SelectionUnit="FullRow"
             ItemsSource="{Binding}"
             Style="{StaticResource MahApps.Styles.DataGrid.Azure}">
+            
+            <!-- 모든 열을 포함 하는 컬렉션을 가져옵니다는 System.Windows.Controls.DataGrid합니다. -->
+            <DataGrid.Columns>
+                
+                <!-- System.Windows.Controls.DataGrid 해당 셀에 텍스트 콘텐츠를 호스트 하는 열입니다. -->
+                <DataGridTextColumn Binding="{Binding DataTime}" Header="측정일시" />
+                <!-- System.Windows.Controls.DataGrid 셀에서 템플릿 지정 된 콘텐츠를 호스트 하는 열입니다. -->
+                <DataGridTemplateColumn Header="통합대기환경수치">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <mah:MetroProgressBar x:Name="PriceProgressBar"
+                                                  Height="20"
+                                                  Margin="5 2"
+                                                  VerticalAlignment="Center"
+                                                  Background="Transparent"
+                                                  Foreground="{DynamicResource MahApps.Brushes.Accent}"
+                                                  Maximum="200"
+                                                  Minimum="0"
+                                                  Value="{Binding Khai}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTextColumn Binding="{Binding Khai}" Header="수치값">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn Binding="{Binding SO2}" Header="아황산가스">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn Binding="{Binding CO}" Header="일산화탄소">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn Binding="{Binding NO2}" Header="이산화질소">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn Binding="{Binding O3}" Header="오존">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn Binding="{Binding PM10}" Header="(PM10)">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn Binding="{Binding PM25}" Header="(PM25)">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+            </DataGrid.Columns>
         </DataGrid>
         
     </Grid>
