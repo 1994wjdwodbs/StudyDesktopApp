@@ -48,4 +48,14 @@ __교재 : 초보자를 위한 C# 200제__ (정보문화사)를 참고하였습�
 ### IoTSensorMonApp
 ![IoTSensorMonApp](images/IoTSensorMonApp.JPG)
 ------------------------
-## "BookRentalShopApp" (Mini) 
+## 📚BookRentalShopApp (Mini Project)
+C#의 윈폼과 Microsoft SQL Server을 이용하여</br>
+책 관리 및 대여 시스템(프로그램)을 작성했습니다.</br>
+>>![결과0](images/BookRentalShopApp.JPG)  
+>>__- 로그인 화면__
+>   
+>         
+>   
+>[(해당 프로젝트)](WinFormAdvancedBank/BookRentalShopApp)
+
+
