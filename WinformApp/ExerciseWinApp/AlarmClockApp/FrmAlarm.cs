@@ -63,8 +63,8 @@ namespace AlarmClockApp
                 {
                     // BtnRelease.PerformClick();
                     BtnRelease_Click(sender, e);
-                    mediaPlayer.URL = @".\medias\sample.mp3";
-                    mediaPlayer.controls.play();
+                    // mediaPlayer.URL = @".\medias\sample.mp3";
+                    // mediaPlayer.controls.play();
                     MessageBox.Show("알람!!", "알람", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
