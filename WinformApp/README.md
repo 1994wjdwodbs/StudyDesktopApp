@@ -40,7 +40,7 @@ __교재 : 초보자를 위한 C# 200제__ (정보문화사)를 참고하였습�
 ![MyNotePadApp](images/MyNotePadApp.JPG)
 
 ### ImageViewerApp
-![ImageViewerApp](images/ImageViewApp.JPG)
+![ImageViewerApp](images/ImageViewerApp.JPG)
 ### WinChartApp
 ![WinChartApp](images/WinChartApp.JPG)
 ### AddressInfoApp
