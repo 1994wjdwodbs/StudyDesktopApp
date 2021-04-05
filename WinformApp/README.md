@@ -56,6 +56,26 @@ C#의 윈폼과 Microsoft SQL Server을 이용하여</br>
 >   
 >         
 >   
+>>![결과1](images/BookRentalShopApp_1.JPG)  
+>>__- 코드 관리__
+>   
+>         
+>   
+>>![결과2](images/BookRentalShopApp_2.JPG)  
+>>__- 회원 관리__
+>   
+>         
+>   
+>>![결과3](images/BookRentalShopApp_3.JPG)  
+>>__- 책 관리__
+>   
+>         
+>   
+>>![결과4](images/BookRentalShopApp_4.JPG)  
+>>__- 대여 관리__
+>   
+>         
+>   
 >[(해당 프로젝트)](WinFormAdvancedBank/BookRentalShopApp)
 
 
